@@ -1,6 +1,9 @@
 name: Get daily_rain_data from knmi
 run-name: ${{ github.actor }} is testing getting daily_rain_data from knmi
 on: workflow_dispatch
+env:
+  TRAIN_START_DATE: "20140101"
+  TRAIN_END_DATE: "20240501"
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -15,8 +18,12 @@ jobs:
       run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+    - name: Get start and end dates for training data
+      run: python set_dates_for_training.py
     - name: Get daily rain data
-      run: python get_daily_rain_data_from_knmi.py
+      run: |
+        echo "Echoing env vars before get daily data: $TRAIN_START_DATE and $TRAIN_END_DATE"
+        python get_daily_rain_data_from_knmi.py
     - name: Commit and push CSV file
       run: |
           git config --global user.name 'github-actions'
