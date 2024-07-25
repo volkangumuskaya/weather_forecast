@@ -6,8 +6,8 @@ import requests
 from requests.exceptions import HTTPError
 
 data = {
-    'start': '20140701',
-    'end': '20240701',
+    'start': os.environ['TRAIN_START_DATE'],
+    'end': os.environ['TRAIN_END_DATE'],
     'vars': 'ALL',
     'stns': '919',
 }
