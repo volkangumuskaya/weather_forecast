@@ -1,4 +1,5 @@
 import datetime
+import os
 
 #set training end date to 1 week ago
 end_date=int(datetime.date.today().strftime('%Y%m%d'))-7
