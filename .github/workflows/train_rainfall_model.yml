@@ -21,7 +21,7 @@ jobs:
       run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add daily_rainfall_comprehensive.csv  # Replace with your actual file name
+          git add files/daily_rainfall_comprehensive.csv  # Replace with your actual file name
           git commit -m 'Add generated CSV file'
           git push
       env:
