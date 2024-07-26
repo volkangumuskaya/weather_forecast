@@ -40,7 +40,7 @@ import random
 
 print('Reading daily_rain_data.csv')
 # filename='ehv_10_years.txt'
-filename='daily_rain_data.csv'
+filename='files/daily_rain_data.csv'
 df=pd.read_csv(filename)
 
 print('Data preparation in process...')
@@ -208,4 +208,5 @@ train_df['sample_type']='train'
 df_all=pd.concat([train_df,test_df])
 df_all=pd.merge(df['date'],df_all,how='left',left_index=True,right_index=True)
 
-df_all.to_csv('daily_rainfall_comprehensive.csv',index=False)
+path='files/daily_rainfall_comprehensive.csv'
+df_all.to_csv(path,index=False)
