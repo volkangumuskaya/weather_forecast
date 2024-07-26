@@ -12,22 +12,6 @@ import calendar
 import re
 from sklearn import datasets
 import random
-# import seaborn as sns
-# import plotly.express as px
-# import plotly.io as pio
-# import matplotlib
-# import matplotlib.pyplot as plt
-# from matplotlib.pyplot import figure
-# import datetime
-# matplotlib.use('Qt5Agg')
-# pio.renderers='svg'
-
-# #Common pandas options for viewing
-# pd.options.display.width = 100
-# pd.set_option('display.max_columns', 40)
-# pd.set_option('display.max_rows', 30)
-# pd.set_option('max_colwidth', 250)
-# pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
 
 # THESE DATA CAN BE USED FREELY PROVIDED THAT THE FOLLOWING SOURCE IS ACKNOWLEDGED:
@@ -35,11 +19,9 @@ import random
 # RD: 24-hour sum of precipitation in tenths of a millimeter from 08:00 UTC previous day to 08:00 UTC current day.
 # SX: Snow cover code number at 08:00 UTC.
 
-# #read dataset
-# dir_path=os.getcwd()
+
 
 print('Reading daily_rain_data.csv')
-# filename='ehv_10_years.txt'
 filename='files/daily_rain_data.csv'
 df=pd.read_csv(filename)
 
@@ -109,11 +91,6 @@ for col in df.columns:
     if col_type == 'object' or col_type.name == 'string':
         df[col] = df[col].astype('category')
 print(df.dtypes)
-
-# get col types
-# features = [x for x in df.columns if x!='target']
-# cols = list(df.select_dtypes(include=['bool','object','category','string','float']).columns)
-# cols.remove('target')
 
 
 # Create X and y
