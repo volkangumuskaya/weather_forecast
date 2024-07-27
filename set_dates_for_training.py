@@ -4,6 +4,12 @@ import os
 #set training end date to 1 week ago
 end_date=int(datetime.date.today().strftime('%Y%m%d'))-7
 
+#go back one month because for some reason knmi website does not provide the current month data
+#since this is just to try github action capabilities, and not make real time predcitions that will be used, it s ok
+#better than causing data leakage 
+#it will simulate how system would work one month ago
+end_date=end_date-100
+
 #start_date is 10 years before end_date
 start_date=int(end_date)-100000
 
