@@ -85,7 +85,7 @@ print(df.dtypes)
 
 print("loading rainfall models")
 import pickle
-with open('rainfall_models.pickle', 'rb') as handle:
+with open('files/rainfall_models.pickle', 'rb') as handle:
     clf_model,reg_model = pickle.load(handle)
 
 print("Making predcitions")
