@@ -86,7 +86,7 @@ print(df.dtypes)
 print("loading rainfall models")
 import pickle
 with open('files/rainfall_models.pickle', 'rb') as handle:
-    clf_model,reg_model = pickle.load(handle)
+    reg_model,clf_model = pickle.load(handle)
 
 print("Making predcitions")
 rain_occurrence_prediction=clf_model.predict(df[features])
