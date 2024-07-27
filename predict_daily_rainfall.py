@@ -100,4 +100,5 @@ df_test = pd.DataFrame({'chance_of_rain_prediction':chance_of_rain_prediction,
 df=pd.concat([df,df_test],axis=1)
 path='files/daily_prediction.csv'
 print('saving to path:',path)
+df['pred_run_on']=str(datetime.datetime.now())
 df.to_csv(path,index=False)
