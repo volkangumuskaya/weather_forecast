@@ -12,6 +12,7 @@ import calendar
 import re
 from sklearn import datasets
 import random
+import pickle
 
 
 # THESE DATA CAN BE USED FREELY PROVIDED THAT THE FOLLOWING SOURCE IS ACKNOWLEDGED:
@@ -187,3 +188,10 @@ df_all=pd.merge(df['date'],df_all,how='left',left_index=True,right_index=True)
 
 path='files/daily_rainfall_comprehensive.csv'
 df_all.to_csv(path,index=False)
+
+
+rainfall_models=[lgbr,lgbr_clf,]
+path='files/rainfall_models.pickle'
+print("Dumping models as artefacts to:", path)
+with open(path, 'wb') as handle:
+    pickle.dump(rainfall_models, handle, protocol=pickle.HIGHEST_PROTOCOL)
