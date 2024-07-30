@@ -101,4 +101,5 @@ df=pd.concat([df,df_test],axis=1)
 path='files/daily_prediction.csv'
 print('saving to path:',path)
 df['pred_run_on']=str(datetime.datetime.now())
-df.to_csv(path,index=False)
+df.tail(1).to_csv(path,mode='a',header=False,index=False)
+
