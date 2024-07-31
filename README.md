@@ -32,6 +32,9 @@ Here, obviously we are not trying to have a full blown weather model. The whole 
 - **Output**: LGBM models - classification and regression (`rainfall_models.pickle`). `daily_rainfall_comprehensive.csv` includes detailed data on training and testing set, errors, etc for tracking purposes if/when things go south.
 
 ### 3.  Get daily data and make predictions for tomorrow (`predict_daily_rainfall.yml`, scheduled every day at 20:00 UTC)
+
+**`predict_daily_rainfall.py`**
+
 Using the saved models as `pickle` files, we get daily data similar to `get_daily_rain_data_from_knmi.py` and make predictions. Call it the inference part if you like.
 
 - **Input**: LGBM models - classification and regression (`rainfall_models.pickle`)
