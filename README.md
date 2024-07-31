@@ -20,6 +20,8 @@ After getting the data, there is some data preparation going on to have a ready 
  
 
 ### 2. Train the prediction models (`train_rainfall_model.yml`, workflow dispatch)
+**`train_rainfall_model.py`**
+
 Here, we train two `LGBM` models, one regression and one classification. Regression model predicts the rainfall amount in mm. Classification predcits whether or now it will rain, i.e. rainfall>=0.1 mm. The two models are exclusive. 
 
 Using classification models, we also provide the probability of rainfall. 
