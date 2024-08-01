@@ -1,5 +1,5 @@
 name: Get historical_data from knmi
-run-name: ${{ github.actor }} is testing getting daily_rain_data from knmi
+run-name: ${{ github.actor }} is testing getting hitorical rain data from knmi
 on: workflow_dispatch
 env:
   TRAIN_START_DATE: "20140101"
