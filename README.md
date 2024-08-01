@@ -18,7 +18,7 @@ Here, we make a `POST` request to KNMI's website (Dutch Meteoology website) usin
 After getting the data, there is some data preparation going on to have a ready dataset for training the LGBM models ( feel free to call it *data munging, wrangling* etc for increased marketability).   
 
 - **Input**: The `env` variables `starting date` and `ending date`
-- **Output**: Historical rainfall amounts (`daily_rain_data.csv`)
+- **Output**: Historical rainfall amounts (`historical_rain_data.csv`)
  
 
 ### 2. Train the prediction models (`train_rainfall_model.yml`, workflow dispatch)
@@ -30,8 +30,8 @@ Using classification models, we also provide the probability of rainfall.
 
 Here, obviously we are not trying to have a full blown weather model. The whole purpose is to have **A** decent model, and make reasonable predictions on schedule. 
 
-- **Input**: Historical rainfall (`daily_rain_data.csv`)
-- **Output**: LGBM models - classification and regression (`rainfall_models.pickle`). `daily_rainfall_comprehensive.csv` includes detailed data on training and testing set, errors, etc for tracking purposes if/when things go south.
+- **Input**: Historical rainfall (`historical_rain_data.csv`)
+- **Output**: LGBM models - classification and regression (`rainfall_models.pickle`). `train_test_set_comprehensive.csv` includes detailed data on training and testing set, errors, etc for tracking purposes if/when things go south.
 
 ### 3.  Get daily data and make predictions for tomorrow (`predict_daily_rainfall.yml`, scheduled every day at 20:00 UTC)
 
@@ -40,4 +40,4 @@ Here, obviously we are not trying to have a full blown weather model. The whole 
 Using the saved models as `pickle` files, we get daily data similar to `get_daily_rain_data_from_knmi.py` and make predictions. Call it the inference part if you like.
 
 - **Input**: LGBM models - classification and regression (`rainfall_models.pickle`)
-- **Output**: Daily predictions file (`daily_predcition.csv`). Each row will be a prediction made at each day. For that reason, the file is written in `append` mode.
+- **Output**: Daily predictions file (`daily_prediction.csv`). Each row will be a prediction made at each day. For that reason, the file is written in `append` mode.
