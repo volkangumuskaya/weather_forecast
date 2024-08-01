@@ -6,12 +6,12 @@ Some `yml` and `python` scripts to learn/practice ML Ops. Nothing fancy, just to
 ## Workflow actions (YML files in `.github/workflows`)
 As the name suggests these files impose scheduled/manually triggered actions. The actions invoke  python scripts on schedule or by manual trigger - for now:
 
-### 1. Retrieve historical data from KNMI (`get_daily_rain_data.yml`, workflow dispatch): 
+### 1. Retrieve historical data from KNMI (`get_historical_rain_data.yml`, workflow dispatch): 
 **`set_dates_for_training.py`**
 
 In order to get the historical dataset and make the `POST` request to KNMI website, we set the starting and end dates. Starting date is 10 years ago and end date is 1 month ago from today. This is manual for now but can and will be scheduled (like daily predcition) to be invoked in every month. 
 
-**`get_daily_rain_data_from_knmi.py`**
+**`get_historical_rain_data_from_knmi.py`**
 
 Here, we make a `POST` request to KNMI's website (Dutch Meteoology website) using `requests` lib from python (quite handy, kudos to them). The retrieved file includes the actual rainfall data for the last 10 years for Eindhoven airport.
 
