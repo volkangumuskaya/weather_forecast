@@ -89,8 +89,12 @@ with open('files/rainfall_models.pickle', 'rb') as handle:
     reg_model,clf_model,model_id = pickle.load(handle)
 
 print("Making predcitions")
+print(df[features])
+print("rain occurrence predcition..")
 rain_occurrence_prediction=clf_model.predict(df[features])
+print("rain amount predcition..")
 rain_amount_mm_prediction=reg_model.predict(df[features])
+print("rain occurrence probability..")
 chance_of_rain_prediction=clf_model.predict_proba(df[features])[:,1]
 
 df_test = pd.DataFrame({'chance_of_rain_prediction':chance_of_rain_prediction,
