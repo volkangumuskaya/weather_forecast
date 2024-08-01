@@ -21,7 +21,7 @@ jobs:
       run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add files/daily_rainfall_comprehensive.csv  
+          git add files/train_test_set_comprehensive.csv  
           git add files/rainfall_models.pickle 
           git commit -m 'Add generated CSV file'
           git push
