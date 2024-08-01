@@ -37,5 +37,5 @@ type(df)
 print(df.dtypes)
 print(df.shape)
 
-path='files/daily_rain_data.csv'
+path='files/historical_rain_data.csv'
 df.to_csv(path,index=False)
