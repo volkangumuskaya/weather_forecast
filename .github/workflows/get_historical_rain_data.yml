@@ -23,7 +23,7 @@ jobs:
     - name: Get daily rain data
       run: |
         echo "Echoing env vars before get daily data: $TRAIN_START_DATE and $TRAIN_END_DATE"
-        python get_daily_rain_data_from_knmi.py
+        python get_historical_rain_data_from_knmi.py
     - name: Commit and push CSV file
       run: |
           git config --global user.name 'github-actions'
