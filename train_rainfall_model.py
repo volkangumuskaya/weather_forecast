@@ -187,7 +187,7 @@ train_df['sample_type']='train'
 df_all=pd.concat([train_df,test_df])
 df_all=pd.merge(df['date'],df_all,how='left',left_index=True,right_index=True)
 
-path='files/daily_rainfall_comprehensive.csv'
+path='files/train_test_set_comprehensive.csv'
 df_all.to_csv(path,index=False)
 
 model_id=str(datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S'))
