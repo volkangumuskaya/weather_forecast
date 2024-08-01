@@ -1,4 +1,4 @@
-*"Devoted to those, who consistently writes predction incorrectly"*
+*"Devoted to those, who never fails to write 'predction' incorrectly"*
 
 # A simple rainfall prediction repo
 Some `yml` and `python` scripts to learn/practice ML Ops. Nothing fancy, just to have an ongoing MLOps project. The structure is straighforward:
