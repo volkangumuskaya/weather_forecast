@@ -86,7 +86,7 @@ print(df.dtypes)
 print("loading rainfall models")
 import pickle
 with open('files/rainfall_models.pickle', 'rb') as handle:
-    reg_model,clf_model = pickle.load(handle)
+    reg_model,clf_model,model_id = pickle.load(handle)
 
 print("Making predcitions")
 rain_occurrence_prediction=clf_model.predict(df[features])
@@ -95,7 +95,8 @@ chance_of_rain_prediction=clf_model.predict_proba(df[features])[:,1]
 
 df_test = pd.DataFrame({'chance_of_rain_prediction':chance_of_rain_prediction,
                         'rain_occurrence_prediction':rain_occurrence_prediction,
-                        'rain_amount_mm_prediction':rain_amount_mm_prediction
+                        'rain_amount_mm_prediction':rain_amount_mm_prediction,
+                        'used_model':model_id
                         })
 df=pd.concat([df,df_test],axis=1)
 path='files/daily_prediction.csv'
