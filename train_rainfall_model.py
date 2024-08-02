@@ -23,8 +23,8 @@ import datetime
 
 
 
-print('Reading daily_rain_data.csv')
-filename='files/daily_rain_data.csv'
+print('Reading historical_rain_data.csv')
+filename='files/historical_rain_data.csv'
 df=pd.read_csv(filename)
 
 print('Data preparation in process...')
